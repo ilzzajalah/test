@@ -1,0 +1,6 @@
+{
+  "name": "Seleksi Marga ZEVERD",
+  "description": "Portal seleksi resmi member editing Marga ZEVERD dengan verifikasi hashtag otomatis dan proteksi keamanan tingkat tinggi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

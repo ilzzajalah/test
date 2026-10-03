@@ -1,11 +1,33 @@
-<div align="center">
+# SELEKSI MARGA ZEVERD
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Website resmi seleksi member editing Marga ZEVERD dengan verifikasi caption video TikTok secara otomatis dan proteksi keamanan berlapis.
 
-  <h1>Built with AI Studio</h2>
+## Fitur Utama
+- **Verifikasi Hashtag Otomatis**: Memeriksa caption video TikTok secara real-time melalui TikTok oEmbed API untuk memastikan kedua hashtag wajib (`#zeverdnewera` dan `#zeverdfamily`) ada sebagai token utuh.
+- **Bento Grid Minimalis & Handcrafted**: Desain dark-mode modern dengan palet warna `#0A0A0B`, aksen emas `#C9A96E`, mikrointeraksi spotlight kursor, dan efek konfeti saat lolos.
+- **Proteksi Anti-SSRF & DNS Filtering**: Validasi ketat terhadap hostname TikTok (`tiktok.com`, `vm.tiktok.com`, `vt.tiktok.com`) serta pencegahan akses ke IP privat/loopback pada setiap hop redirect.
+- **Sliding-Window Rate Limiter**: 8 permintaan per menit dan 40 permintaan per jam per IP (dengan salt hash SHA-256 untuk privasi).
+- **Anti-Replay / Single-Use Check**: Setiap tautan video hanya dapat digunakan satu kali untuk mencegah kecurangan.
+- **Honeypot & Turnstile Ready**: Proteksi bot otomatis tanpa mengganggu pengalaman pengguna.
+- **Perlindungan Link WhatsApp**: Tautan grup WhatsApp hanya tersimpan di variabel server (`WHATSAPP_GROUP_LINK`) dan baru dikirimkan setelah status kelulusan terverifikasi.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Menjalankan Secara Lokal
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+```bash
+# Instal dependensi
+npm install
 
-</div>
+# Salin konfigurasi environment
+cp .env.example .env
+
+# Jalankan server pengembangan
+npm run dev
+```
+
+Buka peramban di `http://localhost:3000`.
+
+## Skrip yang Tersedia
+- `npm run dev`: Menjalankan server full-stack Express + Vite
+- `npm run build`: Membangun aset produksi Vite
+- `npm run start`: Menjalankan server dalam mode produksi
+- `npm run lint`: Memeriksa tipe TypeScript
